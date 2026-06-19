@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sehenswürdigkeiten Trogir – Was du wirklich sehen musst</title>
+  <meta name="description" content="Die besten Sehenswürdigkeiten in Trogir: Kathedrale, Kamerlengo-Festung, Cipiko-Palast, Altstadt und mehr – mit Öffnungszeiten, Preisen und Insider-Tipps.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sehenswürdigkeiten Trogir – Was du wirklich sehen musst">
+  <meta property="og:description" content="Kathedrale, Kamerlengo-Festung, Altstadt & mehr – alle Highlights mit Tipps, Öffnungszeiten und Preisen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trogir-insider.de/sehenswuerdigkeiten.html">
+  <meta property="og:image" content="https://trogir-insider.de/images/og-sehenswuerdigkeiten.jpg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page-specific styles ── */
+
+    /* SIGHT CARDS */
+    .sight-card {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .sight-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .sight-card-header {
+      padding: 2rem 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .sight-icon-large { font-size: 2.5rem; }
+    .sight-card-body { padding: 1rem 2rem 2rem; }
+    .sight-card-body h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .sight-card-body p {
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+    .sight-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      padding: 1.2rem;
+      background: var(--sand);
+      border-top: 1px solid var(--light);
+      font-size: 0.8rem;
+    }
+    .sight-meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
+    .sight-meta-label { font-weight: 600; color: var(--sea); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .sight-meta-value { color: var(--mid); }
+
+    /* MUST / HIDDEN GEM LABEL */
+    .label-must    { background: var(--sea);   color: var(--sand); }
+    .label-gem     { background: var(--stone); color: var(--dark); }
+    .label-free    { background: #2E7D52;      color: white; }
+    .label-outdoor { background: #5D6D7E;      color: white; }
+
+    /* ROUTE BOX */
+    .route-box {
+      background: var(--sea);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .route-box h3 {
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+    .route-box p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+    .route-steps { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .route-steps li {
+      display: flex; align-items: flex-start; gap: 1rem;
+      font-size: 0.88rem; color: rgba(255,255,255,0.8);
+    }
+    .route-step-num {
+      background: var(--stone); color: var(--dark);
+      font-weight: 700; font-size: 0.75rem;
+      min-width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* TICKET BOX */
+    .ticket-box {
+      background: var(--sand);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .ticket-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--sea);
+      font-family: var(--font-sans);
+      font-weight: 600;
+    }
+    .ticket-row {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--light);
+      font-size: 0.88rem;
+    }
+    .ticket-row:last-child { border-bottom: none; }
+    .ticket-price { font-weight: 700; color: var(--sea); }
+
+    /* FILTER BAR */
+    .filter-bar {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--light);
+      border-radius: 20px;
+      background: var(--white);
+      font-size: 0.78rem; font-weight: 500;
+      cursor: pointer; color: var(--mid);
+      transition: all 0.2s;
+      font-family: var(--font-sans);
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--sea);
+      border-color: var(--sea);
+      color: var(--white);
+    }
+
+    @media (max-width: 768px) {
+      .route-box { grid-template-columns: 1fr; }
+      .sight-meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">Trogir <span>Insider</span></a>
+  <ul>
+    <li><a href="sehenswuerdigkeiten.html" class="active">Sehenswürdigkeiten</a></li>
+    <li><a href="restaurants.html">Restaurants</a></li>
+    <li><a href="hotels.html">Hotels</a></li>
+    <li><a href="straende.html">Strände</a></li>
+    <li><a href="ausfluege.html">Ausflüge</a></li>
+    <li><a href="infos.html">Infos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li>
+      <div class="lang-switch">
+        <a href="sehenswuerdigkeiten.html" class="active">DE</a>
+        <a href="en/sights.html">EN</a>
+        <a href="nl/bezienswaardigheden.html">NL</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero page-hero">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1555990793-da11153b2473?w=1600&q=80');"></div>
+  <div class="breadcrumb">
+    <a href="index.html">Startseite</a>
+    <span>›</span>
+    Sehenswürdigkeiten
+  </div>
+  <div class="hero-tag">UNESCO-Welterbe · Altstadt · Geschichte</div>
+  <h1>Was du in Trogir<br><em>sehen musst</em></h1>
+  <p class="hero-sub">Vom romanisch-gotischen Portal des Meisters Radovan bis zur venezianischen Kamerlengo-Festung – Trogirs Altstadt ist ein einziges Freilichtmuseum. Hier sind die Highlights, die sich wirklich lohnen.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     INTRO & TICKET-HINWEIS
+════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+      <div>
+        <span class="section-tag">Überblick</span>
+        <h2>Die Altstadt – ein <em>Freilichtmuseum</em></h2>
+        <div class="divider"></div>
+        <p>Trogirs Altstadt liegt auf einer winzigen Insel, verbunden durch Brücken mit dem Festland und der Insel Čiovo. Auf gerade mal 300 mal 600 Metern drängen sich romanische, gotische, Renaissance- und Barockbauten aus über 2.300 Jahren Geschichte.</p>
+        <br>
+        <p>Seit 1997 steht die gesamte Altstadt auf der UNESCO-Welterbeliste – eine der besterhaltenen mittelalterlichen Städte des gesamten Mittelmeerraums. Das Besondere: Fast alle Sehenswürdigkeiten liegen zu Fuß in wenigen Minuten erreichbar beieinander.</p>
+        <br>
+        <p><strong>Tipp:</strong> Plane mindestens einen vollen Tag ein, um alles in Ruhe zu sehen. Wer früh morgens startet – vor 9 Uhr – hat die Gassen noch fast für sich allein.</p>
+      </div>
+      <div>
+        <div class="ticket-box">
+          <h3>🎟️ Kombitickets – lohnt sich!</h3>
+          <p style="font-size:0.82rem; color:var(--mid); margin-bottom:1rem;">Für die meisten Sehenswürdigkeiten gibt es günstige Kombitickets. Einzeltickets an der Kasse sind meist teurer.</p>
+          <div class="ticket-row">
+            <span>Kathedrale + Schatzkammer</span>
+            <span class="ticket-price">10 €</span>
+          </div>
+          <div class="ticket-row">
+            <span>Kamerlengo-Festung</span>
+            <span class="ticket-price">5 €</span>
+          </div>
+          <div class="ticket-row">
+            <span>Kloster St. Nikolaus</span>
+            <span class="ticket-price">4 €</span>
+          </div>
+          <div class="ticket-row">
+            <span>Kombiticket (3 Attraktionen)</span>
+            <span class="ticket-price">15 €</span>
+          </div>
+          <div class="ticket-row">
+            <span>Altstadt erkunden</span>
+            <span class="ticket-price" style="color:#2E7D52;">kostenlos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SEHENSWÜRDIGKEITEN
+════════════════════════════════════════ -->
+<section style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Die Highlights</span>
+      <h2>Die <em>10 besten</em> Sehenswürdigkeiten</h2>
+      <p>Unsere ehrliche Auswahl – was sich wirklich lohnt, und was du notfalls überspringen kannst.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">Alle</button>
+      <button class="filter-btn">Kirchen & Klöster</button>
+      <button class="filter-btn">Paläste</button>
+      <button class="filter-btn">Festungen</button>
+      <button class="filter-btn">Kostenlos</button>
+    </div>
+
+    <div class="grid-2" style="gap: 1.5rem;">
+
+      <!-- 1 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">⛪</div>
+          <span class="badge label-must">Unbedingt!</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Kathedrale des hl. Laurentius</h3>
+          <p>Das absolute Herzstück Trogirs und eines der bedeutendsten Bauwerke der gesamten Adria. Begonnen im 13. Jahrhundert, vereint die Kathedrale romanische, gotische und Renaissance-Elemente auf engstem Raum. Der Haupteingang – das sogenannte Radovan-Portal aus dem Jahr 1240 – gilt als Meisterwerk der kroatischen Bildhauerkunst. Benannt nach seinem Schöpfer Meister Radovan, zeigt das Portal detailreiche Szenen aus dem Leben Christi, eingebettet in Tiere, Engel und Heilige.</p>
+          <p>Im Inneren lohnt sich ein Blick auf die Kapelle des hl. Ivan Ursini, ein weiteres Highlight kroatischer Renaissanceskulptur. Der freistehende Glockenturm aus dem 14. bis 17. Jahrhundert lässt sich besteigen – der Ausblick auf die Altstadt und die Inseln ist jede Stufe wert.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Mo–Sa 9–19 Uhr, So 14–19 Uhr</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">ca. 10 € (mit Schatzkammer)</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">45–90 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Glockenturm besteigen!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🏰</div>
+          <span class="badge label-must">Unbedingt!</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Kamerlengo-Festung</h3>
+          <p>Die mächtige Kamerlengo-Festung am westlichen Ende der Altstadt ist das Wahrzeichen Trogirs. Die Venezianer erbauten sie im 15. Jahrhundert als Teil des Küstenverteidigungssystems gegen osmanische Überfälle. Der Name leitet sich vom venezianischen Begriff für den Schatzmeister ab – hier wurde einst die Stadtkasse verwahrt.</p>
+          <p>Heute lässt sich die Festung frei erkunden. Von den Zinnen und dem Hauptturm bietet sich der schönste Panoramablick der ganzen Stadt: Trogirs Dächer, die Adria, Čiovo und bei klarem Wetter bis zu den dalmatinischen Inseln. Im Sommer finden in der Festungsanlage regelmäßig Open-Air-Konzerte und Filmvorführungen statt.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Täglich 9–21 Uhr (Sommer)</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">ca. 5 €</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">30–60 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Abends für goldenes Licht</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🏛️</div>
+          <span class="badge label-must">Unbedingt!</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Cipiko-Palast</h3>
+          <p>Direkt gegenüber der Kathedrale erhebt sich das beeindruckende Ensemble des Cipiko-Palastes aus dem 15. Jahrhundert. Die Familie Cipiko war eine der mächtigsten Adelsfamilien Trogirs – ihr Palast ist ein Zeugnis des einstigen Reichtums und Einflusses der Stadt. Besonders auffällig sind die fein verzierten venezianisch-gotischen Drillingsfenster an der Fassade.</p>
+          <p>Der Palast ist heute in Privatbesitz und von innen nicht zugänglich – aber allein die Fassade am Hauptplatz ist einen langen Blick wert. Wer genau hinschaut, entdeckt im Erdgeschoss noch die originalen venezianischen Wappensteine.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Außenansicht jederzeit</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos (Außen)</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">15–20 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Morgens für beste Fotos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🕌</div>
+          <span class="badge label-gem">Geheimtipp</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Kloster & Kirche des hl. Nikolaus</h3>
+          <p>Das Benediktinerinnen-Kloster ist eines der stillsten und unbekanntesten Juwelen Trogirs – und beherbergt eine absolute Rarität: einen der bedeutendsten antiken Reliefs der kroatischen Adriaküste. Das sogenannte Kairos-Relief aus dem 3. oder 4. Jahrhundert zeigt die griechische Gottheit des günstigen Augenblicks und ist von einer Qualität, die Kunsthistoriker noch heute staunen lässt.</p>
+          <p>Der Besuch ist nur im Rahmen einer kurzen Führung durch eine Ordensschwester möglich – eine besondere Erfahrung. Wer klopft und Glück hat, wird persönlich durch das kleine Museum geführt.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Mo–Sa 10–12 & 16–18 Uhr</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">ca. 4 €</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">20–30 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Einfach anklopfen!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🚪</div>
+          <span class="badge label-free">Kostenlos</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Nordinseltor (Kopnena vrata)</h3>
+          <p>Das Landtor aus dem 17. Jahrhundert ist der Haupteingang zur Altstadt vom Festland aus. Was aussieht wie ein schlichtes Stadttor, ist in Wirklichkeit ein architektonisches Kleinod: Über dem Bogen thront eine Statue des Stadtheiligen Johannes von Trogir (Sv. Ivan Ursini) aus dem 17. Jahrhundert – der Schutzpatron wacht über alle Ein- und Ausreisenden.</p>
+          <p>Abends, wenn das Tor von warmen Strahlern beleuchtet wird und das Steinrelief goldgelb leuchtet, ist es der romantischste Moment der ganzen Stadt. Unbedingt nach Sonnenuntergang noch einmal vorbeigehen.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Immer zugänglich</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">10–15 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Abends besonders schön</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🌊</div>
+          <span class="badge label-free">Kostenlos</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Riva-Promenade</h3>
+          <p>Die Riva – die Uferpromenade auf der Südseite der Altstadt – ist das gesellschaftliche Herz Trogirs. Hier legen Segelyachten, Fischerboote und im Sommer auch große Kreuzfahrtschiffe an. Palmen, Cafés und Restaurants säumen die Promenade, der Blick geht auf Čiovo und die offene Adria.</p>
+          <p>Abends gehört die Riva den Einheimischen: Familien spazieren, ältere Männer spielen Karten, Kinder fahren Fahrrad. Das ist das echte Trogir – weit weg vom Touristenrummel der Altstadt. Hierher kommen zum Kaffee sitzen, nichts tun, Boote beobachten.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Immer zugänglich</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">So lange du magst</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Abends mit Einheimischen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">⛩️</div>
+          <span class="badge label-gem">Geheimtipp</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Kirche & Kloster des hl. Dominik</h3>
+          <p>Das dominikanische Kloster aus dem 14. Jahrhundert ist eine der ruhigsten Ecken der sonst so belebten Altstadt. Im Zweiten Weltkrieg schwer beschädigt und danach aufwändig restauriert, beherbergt es heute eine kleine, aber bemerkenswerte Sammlung sakraler Kunst: ein reich verzierter Flügelaltar von Blaz Jurjev Trogiranin, Skulpturen von Nikola Firentinac sowie ein mediterran bepflanzter Klostergarten.</p>
+          <p>Der Innenhof ist über einen kleinen Souvenirshop zugänglich – rein, durchatmen, den Brunnen bewundern, und schon ist man wieder in der Hektik der Gassen.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Mo–Sa 9–12 & 17–19 Uhr</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kleines Eintrittsgeld</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">20–30 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Klostergarten ansehen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🏝️</div>
+          <span class="badge label-outdoor">Natur</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Insel Čiovo</h3>
+          <p>Direkt mit der Altstadt über eine Brücke verbunden, und doch eine andere Welt: Čiovo ist 15 Kilometer lang, drei Kilometer breit und überraschend still. Während die Altstadt im Hochsommer aus allen Nähten platzt, findet man auf Čiovo noch ruhige Buchten, alte Olivenhaine, kleine Fischerdörfer und kristallklares Wasser.</p>
+          <p>Im Süden der Insel lohnt sich ein Abstecher nach Slatine mit der Eremitenkirche Madonna von Prizidnica – von hier aus öffnet sich ein weites Panorama über die Adria. Wer ein Auto hat, sollte die Küstenstraße rund um Čiovo fahren.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Anreise</span>
+            <span class="sight-meta-value">Zu Fuß über die Brücke</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">Halbtags bis Ganztags</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Mietwagen für die Insel</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🏛️</div>
+          <span class="badge label-free">Kostenlos</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Stadtloggia & Glockenturm St. Sebastian</h3>
+          <p>Die offene venezianische Stadtloggia aus dem 14./15. Jahrhundert war einst der Ort, an dem Recht gesprochen und Handel getrieben wurde – das Herz des öffentlichen Lebens in Trogir. Heute ist sie der schönste Platz, um das Treiben am Hauptplatz zu beobachten. Die Säulenbögen und das Steinrelief über dem Eingang sind sehenswert.</p>
+          <p>Direkt nebenan der schlanke Glockenturm der Kirche St. Sebastian aus dem 15. Jahrhundert – mit einem Relief des Schutzpatrons über dem Eingang. Ein schönes Fotomotiv, besonders morgens wenn die Sonne von Osten auf den Stein fällt.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Immer zugänglich</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">15–20 Minuten</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Morgens für Fotos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="sight-card">
+        <div class="sight-card-header">
+          <div class="sight-icon-large">🗺️</div>
+          <span class="badge label-free">Kostenlos</span>
+        </div>
+        <div class="sight-card-body">
+          <h3>Die Altstadtgassen – einfach schlendern</h3>
+          <p>Das eigentliche Geheimnis Trogirs liegt nicht in einzelnen Sehenswürdigkeiten, sondern in den Gassen dazwischen. Auf drei Meter breiten Pflasterwegen, flankiert von Palmen, die aus Innenhöfen ragen, Wäsche, die zwischen Fenstern hängt, und Katzen, die auf Treppenstufen schlafen – hier atmet die Stadt.</p>
+          <p>Einfach reingehen, links abbiegen, durch eine Tür schauen, einen Kaffee auf einer winzigen Piazza trinken. Wer sich in Trogirs Altstadt verläuft, hat alles richtig gemacht. Nach zehn Minuten findet man ohnehin wieder ans Meer.</p>
+        </div>
+        <div class="sight-meta">
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Öffnungszeiten</span>
+            <span class="sight-meta-value">Immer</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Eintritt</span>
+            <span class="sight-meta-value">Kostenlos</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Dauer</span>
+            <span class="sight-meta-value">So lange du magst</span>
+          </div>
+          <div class="sight-meta-item">
+            <span class="sight-meta-label">Tipp</span>
+            <span class="sight-meta-value">Vor 9 Uhr oder nach 18 Uhr</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     EMPFOHLENE ROUTE
+════════════════════════════════════════ -->
+<section class="bg-sand">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Rundgang</span>
+      <h2>Trogir in <em>einem Tag</em> – unsere Route</h2>
+      <p>Wer nur einen Tag hat, sollte diese Route gehen. Alles zu Fuß, ca. 4–5 Stunden reine Besichtigungszeit.</p>
+    </div>
+    <div class="route-box">
+      <div>
+        <h3>Der perfekte Trogir-Tag</h3>
+        <p>Früh starten, Mittag auf der Riva, Festung am Nachmittag, Abends am Tor. So geht Trogir.</p>
+        <br>
+        <a href="ausfluege.html" class="btn-primary">Ausflüge von Trogir →</a>
+      </div>
+      <ul class="route-steps">
+        <li><span class="route-step-num">1</span> <span><strong>8:30 Uhr</strong> – Nordinseltor & erste Gassen (vor dem Touristenansturm)</span></li>
+        <li><span class="route-step-num">2</span> <span><strong>9:00 Uhr</strong> – Kathedrale & Glockenturm besteigen</span></li>
+        <li><span class="route-step-num">3</span> <span><strong>10:30 Uhr</strong> – Cipiko-Palast & Stadtloggia am Hauptplatz</span></li>
+        <li><span class="route-step-num">4</span> <span><strong>11:00 Uhr</strong> – Kloster St. Nikolaus (mit Kairos-Relief)</span></li>
+        <li><span class="route-step-num">5</span> <span><strong>12:30 Uhr</strong> – Mittagessen auf der Riva (zwei Gassen hinter dem Hauptplatz)</span></li>
+        <li><span class="route-step-num">6</span> <span><strong>14:30 Uhr</strong> – Kamerlengo-Festung & Turm</span></li>
+        <li><span class="route-step-num">7</span> <span><strong>16:00 Uhr</strong> – Čiovo: Strand & Abkühlen</span></li>
+        <li><span class="route-step-num">8</span> <span><strong>20:00 Uhr</strong> – Abendessen & Spaziergang am beleuchteten Stadttor</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════ -->
+<section class="newsletter">
+  <span class="section-tag">Newsletter</span>
+  <h2>Kein Tipp soll <em>dir entgehen</em></h2>
+  <p>Einmal im Monat: Neue Reisetipps, saisonale Highlights und Frühbucherrabatte für Ausflüge.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="deine@email.de">
+    <button type="button">Anmelden</button>
+  </div>
+  <p class="nl-note">Jederzeit abmeldbar. Kein Spam, versprochen.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <a href="index.html" class="footer-logo">Trogir <span>Insider</span></a>
+  <div class="footer-links">
+    <a href="sehenswuerdigkeiten.html">Sehenswürdigkeiten</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="ausfluege.html">Ausflüge</a>
+    <a href="blog.html">Blog</a>
+    <a href="infos.html">Kontakt</a>
+  </div>
+  <div>
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
+    <span style="margin-top:0.4rem;display:block;">© 2026 Trogir Insider. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+</body>
+</html>
