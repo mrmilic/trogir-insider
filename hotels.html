@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels in Trogir – Die besten Unterkünfte für jeden Stil & Budget</title>
+  <meta name="description" content="Die besten Hotels, Apartments und Boutique-Unterkünfte in Trogir und Umgebung – von der Altstadt bis Čiovo. Mit Preisvergleich und Insider-Tipps zur Lage.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hotels in Trogir – Die besten Unterkünfte für jeden Stil & Budget">
+  <meta property="og:description" content="Hotels, Apartments und Boutique-Unterkünfte in Trogir – mit Insider-Tipps zur besten Lage.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trogir-insider.com/hotels.html">
+  <meta property="og:image" content="https://trogir-insider.com/images/og-hotels.jpg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* ── Page-specific styles ── */
+
+    /* AREA CARDS */
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .area-card {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .area-card h3 { margin-bottom: 0.4rem; }
+    .area-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--stone-dark);
+      margin-bottom: 0.8rem;
+    }
+    .area-card p { margin-bottom: 1rem; }
+    .area-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--mid);
+      border-top: 1px solid var(--light);
+      padding-top: 0.8rem;
+    }
+
+    /* HOTEL CARDS */
+    .hotel-card {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .hotel-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .hotel-img {
+      background: linear-gradient(135deg, var(--sea), var(--sea-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.8rem;
+      min-height: 100%;
+    }
+    .hotel-body { padding: 1.6rem 1.8rem; display: flex; flex-direction: column; }
+    .hotel-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1rem; margin-bottom: 0.4rem;
+    }
+    .hotel-stars { color: var(--stone); font-size: 0.8rem; letter-spacing: 0.1em; }
+    .hotel-body h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .hotel-loc { font-size: 0.78rem; color: var(--mid); margin-bottom: 0.8rem; }
+    .hotel-body p.desc { font-size: 0.85rem; margin-bottom: 1rem; flex-grow: 1; }
+    .hotel-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+    .hotel-price-tag { font-size: 0.78rem; color: var(--mid); }
+    .hotel-price-tag strong { color: var(--sea); font-size: 1rem; }
+    .hotel-rating {
+      background: var(--sea);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .hotel-card { grid-template-columns: 1fr; }
+      .hotel-img { min-height: 120px; }
+    }
+
+    /* SEARCH BOX */
+    .search-box {
+      background: var(--sea);
+      border-radius: var(--radius);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .search-box h3 { color: var(--white); font-size: 1.3rem; margin-bottom: 0.4rem; }
+    .search-box p { color: rgba(255,255,255,0.6); font-size: 0.88rem; max-width: 420px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">Trogir <span>Insider</span></a>
+  <ul>
+    <li><a href="sehenswuerdigkeiten.html">Sehenswürdigkeiten</a></li>
+    <li><a href="restaurants.html">Restaurants</a></li>
+    <li><a href="hotels.html" class="active">Hotels</a></li>
+    <li><a href="straende.html">Strände</a></li>
+    <li><a href="ausfluege.html">Ausflüge</a></li>
+    <li><a href="infos.html">Infos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li>
+      <div class="lang-switch">
+        <a href="hotels.html" class="active">DE</a>
+        <a href="en/hotels.html">EN</a>
+        <a href="nl/hotels.html">NL</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero page-hero">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=1600&q=80');"></div>
+  <div class="breadcrumb">
+    <a href="index.html">Startseite</a>
+    <span>›</span>
+    Hotels
+  </div>
+  <div class="hero-tag">Übernachten · Altstadt · Čiovo · Seget</div>
+  <h1>Schlafen mit<br><em>Meerblick</em></h1>
+  <p class="hero-sub">Vom Boutique-Hotel in der UNESCO-Altstadt bis zum ruhigen Apartment auf Čiovo – hier findest du die passende Unterkunft für deinen Trogir-Aufenthalt, zu jedem Budget.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SUCHBOX (Booking.com Affiliate)
+════════════════════════════════════════ -->
+<section style="padding-bottom: 2rem;">
+  <div class="container">
+    <div class="search-box">
+      <div>
+        <h3>Verfügbarkeit & Preise live prüfen</h3>
+        <p>Über 200 Unterkünfte in Trogir auf einen Blick – kostenlose Stornierung bei den meisten Angeboten.</p>
+      </div>
+      <a href="https://www.booking.com/searchresults.html?ss=Trogir&aid=YOUR_AFFILIATE_ID" target="_blank" rel="sponsored" class="btn-primary">Hotels in Trogir ansehen →</a>
+    </div>
+    <p class="affiliate-note" style="text-align:center; margin-top:1rem;">* Partnerlink zu Booking.com – für dich kostenlos, wir erhalten bei einer Buchung eine kleine Provision.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     WO ÜBERNACHTEN – GEBIETE
+════════════════════════════════════════ -->
+<section style="padding-top: 1rem;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Lage</span>
+      <h2>Wo du in Trogir <em>wohnen solltest</em></h2>
+      <p>Die Lage entscheidet über deinen Urlaub. Diese vier Bereiche solltest du kennen, bevor du buchst.</p>
+    </div>
+    <div class="area-grid">
+      <div class="area-card">
+        <span class="area-tag">Am romantischsten</span>
+        <h3>🏛️ Altstadt (Insel)</h3>
+        <p>Mitten im UNESCO-Welterbe, alles zu Fuß erreichbar. Enge Gassen, historische Steinhäuser, abends sehr lebendig. Wenig Parkplätze, oft keine Klimaanlage in alten Gebäuden.</p>
+        <div class="area-meta">
+          <span>Gehzeit Zentrum: 0 Min</span>
+          <span>Preisniveau: €€€</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <span class="area-tag">Am ruhigsten</span>
+        <h3>🏝️ Čiovo</h3>
+        <p>Direkt über die Brücke von der Altstadt erreichbar, aber spürbar ruhiger. Mehr Hotels mit Pool, oft eigener Strandzugang, gute Parkmöglichkeiten.</p>
+        <div class="area-meta">
+          <span>Gehzeit Zentrum: 5–15 Min</span>
+          <span>Preisniveau: €€</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <span class="area-tag">Am günstigsten</span>
+        <h3>🏘️ Seget Donji / Vranjica</h3>
+        <p>Festland direkt gegenüber der Altstadt. Günstige Apartments, eigenes Auto empfehlenswert. Gute Wahl für Familien mit Budget-Fokus.</p>
+        <div class="area-meta">
+          <span>Gehzeit Zentrum: 10–20 Min</span>
+          <span>Preisniveau: €</span>
+        </div>
+      </div>
+      <div class="area-card">
+        <span class="area-tag">Für Resort-Fans</span>
+        <h3>🏖️ Medena / Okrug</h3>
+        <p>Größere Resort-Anlagen mit Halb- oder Vollpension, ideal für Strandurlaub mit Kindern. Trogir per Bus oder Boot-Shuttle erreichbar.</p>
+        <div class="area-meta">
+          <span>Gehzeit Zentrum: nicht zu Fuß</span>
+          <span>Preisniveau: €€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOTELEMPFEHLUNGEN
+════════════════════════════════════════ -->
+<section class="bg-sand">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Unsere Auswahl</span>
+      <h2>Hotels & Apartments, <em>die wir empfehlen</em></h2>
+      <p>Eine ehrliche Auswahl nach Preisklasse – keine bezahlten Platzierungen, nur was wirklich gut ist.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:1.2rem;">
+
+      <div class="hotel-card">
+        <div class="hotel-img">🏛️</div>
+        <div class="hotel-body">
+          <div class="hotel-top">
+            <div>
+              <div class="hotel-stars">★★★★★</div>
+              <h3>Hotel Brown Beach House</h3>
+              <div class="hotel-loc">📍 Čiovo, direkt am Wasser</div>
+            </div>
+            <span class="hotel-rating">9.3 Hervorragend</span>
+          </div>
+          <p class="desc">Design-Hotel mit privater Bucht, Pool und Spa. Ideal für Pärchen, die Ruhe und Luxus suchen, aber nah an der Altstadt bleiben wollen.</p>
+          <div class="hotel-bottom">
+            <span class="hotel-price-tag">ab <strong>180 €</strong> / Nacht</span>
+            <a href="https://www.booking.com/searchresults.html?ss=Trogir&aid=YOUR_AFFILIATE_ID" target="_blank" rel="sponsored" class="btn-sea">Verfügbarkeit prüfen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-img">🏨</div>
+        <div class="hotel-body">
+          <div class="hotel-top">
+            <div>
+              <div class="hotel-stars">★★★★</div>
+              <h3>Hotel Concordia</h3>
+              <div class="hotel-loc">📍 Mitten in der Altstadt</div>
+            </div>
+            <span class="hotel-rating">8.9 Sehr gut</span>
+          </div>
+          <p class="desc">Historisches Stadthaus aus dem 15. Jahrhundert, wenige Schritte von der Kathedrale. Charmant, zentral, mit Frühstücksterrasse am Wasser.</p>
+          <div class="hotel-bottom">
+            <span class="hotel-price-tag">ab <strong>110 €</strong> / Nacht</span>
+            <a href="https://www.booking.com/searchresults.html?ss=Trogir&aid=YOUR_AFFILIATE_ID" target="_blank" rel="sponsored" class="btn-sea">Verfügbarkeit prüfen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-img">🌊</div>
+        <div class="hotel-body">
+          <div class="hotel-top">
+            <div>
+              <div class="hotel-stars">★★★</div>
+              <h3>Medena Hotel & Resort</h3>
+              <div class="hotel-loc">📍 Seget, eigener Strand</div>
+            </div>
+            <span class="hotel-rating">8.1 Sehr gut</span>
+          </div>
+          <p class="desc">Großzügige Anlage mit Halbpension-Option, Kinderclub und mehreren Pools. Beliebt bei Familien, Shuttle zur Altstadt verfügbar.</p>
+          <div class="hotel-bottom">
+            <span class="hotel-price-tag">ab <strong>85 €</strong> / Nacht</span>
+            <a href="https://www.booking.com/searchresults.html?ss=Trogir&aid=YOUR_AFFILIATE_ID" target="_blank" rel="sponsored" class="btn-sea">Verfügbarkeit prüfen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-img">🏠</div>
+        <div class="hotel-body">
+          <div class="hotel-top">
+            <div>
+              <div class="hotel-stars">★★★</div>
+              <h3>Apartments Vranjica Sunset</h3>
+              <div class="hotel-loc">📍 Vranjica, Festland</div>
+            </div>
+            <span class="hotel-rating">9.0 Hervorragend</span>
+          </div>
+          <p class="desc">Moderne Apartments mit Küche und Blick auf die Altstadt von gegenüber. Gutes Preis-Leistungs-Verhältnis, eigenes Auto empfehlenswert.</p>
+          <div class="hotel-bottom">
+            <span class="hotel-price-tag">ab <strong>55 €</strong> / Nacht</span>
+            <a href="https://www.booking.com/searchresults.html?ss=Trogir&aid=YOUR_AFFILIATE_ID" target="_blank" rel="sponsored" class="btn-sea">Verfügbarkeit prüfen →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="affiliate-note" style="text-align:center; margin-top:1.5rem;">* Alle Links sind Partnerlinks zu Booking.com – für dich kostenlos, wir erhalten bei einer Buchung eine kleine Provision.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     BUCHUNGSTIPPS
+════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Insider-Tipps</span>
+      <h2>Bevor du <em>buchst</em></h2>
+    </div>
+    <div class="tips-grid" style="border:1px solid var(--light);">
+      <div class="tip-item" style="padding:2.5rem; border-bottom:1px solid var(--light); border-right:1px solid var(--light);">
+        <div class="tip-num" style="font-family:var(--font-serif); font-size:3rem; color:var(--light); margin-bottom:0.8rem;">01</div>
+        <h3 style="font-family:var(--font-sans); font-size:1rem; color:var(--sea); margin-bottom:0.5rem;">Früh buchen lohnt sich im Juli/August</h3>
+        <p>In der Hauptsaison sind die guten Unterkünfte oft schon im April ausgebucht. Wer im Sommer kommt, sollte spätestens im Frühjahr buchen.</p>
+      </div>
+      <div class="tip-item" style="padding:2.5rem; border-bottom:1px solid var(--light);">
+        <div class="tip-num" style="font-family:var(--font-serif); font-size:3rem; color:var(--light); margin-bottom:0.8rem;">02</div>
+        <h3 style="font-family:var(--font-sans); font-size:1rem; color:var(--sea); margin-bottom:0.5rem;">Kostenlose Stornierung wählen</h3>
+        <p>Croatian Sommerwetter und Reisepläne ändern sich. Achte beim Filtern auf die Option "kostenlose Stornierung" – kostet meist nicht mehr.</p>
+      </div>
+      <div class="tip-item" style="padding:2.5rem; border-right:1px solid var(--light);">
+        <div class="tip-num" style="font-family:var(--font-serif); font-size:3rem; color:var(--light); margin-bottom:0.8rem;">03</div>
+        <h3 style="font-family:var(--font-sans); font-size:1rem; color:var(--sea); margin-bottom:0.5rem;">Altstadt = kein Auto vor der Tür</h3>
+        <p>In der Altstadt selbst dürfen keine Autos fahren. Wer ein Auto hat, sollte ein Hotel mit Parkplatz oder eine Unterkunft auf Čiovo/Festland wählen.</p>
+      </div>
+      <div class="tip-item" style="padding:2.5rem;">
+        <div class="tip-num" style="font-family:var(--font-serif); font-size:3rem; color:var(--light); margin-bottom:0.8rem;">04</div>
+        <h3 style="font-family:var(--font-sans); font-size:1rem; color:var(--sea); margin-bottom:0.5rem;">Bewertungen nach Reisetyp filtern</h3>
+        <p>Eine Unterkunft, die Pärchen lieben, kann für Familien ungeeignet sein. Filtere Bewertungen gezielt nach deinem Reisetyp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════ -->
+<section class="newsletter">
+  <span class="section-tag">Newsletter</span>
+  <h2>Kein Tipp soll <em>dir entgehen</em></h2>
+  <p>Einmal im Monat: neue Unterkunfts-Tipps, saisonale Preise und Frühbucherrabatte – direkt in dein Postfach.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="deine@email.de">
+    <button type="button">Anmelden</button>
+  </div>
+  <p class="nl-note">Jederzeit abmeldbar. Kein Spam, versprochen.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <a href="index.html" class="footer-logo">Trogir <span>Insider</span></a>
+  <div class="footer-links">
+    <a href="sehenswuerdigkeiten.html">Sehenswürdigkeiten</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="ausfluege.html">Ausflüge</a>
+    <a href="blog.html">Blog</a>
+    <a href="infos.html">Kontakt</a>
+  </div>
+  <div>
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
+    <span style="margin-top:0.4rem;display:block;">© 2026 Trogir Insider. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+</body>
+</html>

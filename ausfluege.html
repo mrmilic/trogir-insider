@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ausflüge ab Trogir – Krka, Hvar, Plitvicer Seen & mehr buchen</title>
+  <meta name="description" content="Die besten Tagesausflüge von Trogir aus: Krka Wasserfälle, Blaue Grotte, Hvar, Plitvicer Seen und Split. Mit Preisen, Dauer und direkter Online-Buchung.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ausflüge ab Trogir – Krka, Hvar, Plitvicer Seen & mehr buchen">
+  <meta property="og:description" content="Tagesausflüge von Trogir aus – Wasserfälle, Inseln und Nationalparks, direkt online buchbar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://trogir-insider.com/ausfluege.html">
+  <meta property="og:image" content="https://trogir-insider.com/images/og-ausfluege.jpg">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* TOUR CARDS (large) */
+    .tour-card {
+      background: var(--white);
+      border: 1px solid var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tour-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .tour-img {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      min-height: 100%;
+      position: relative;
+    }
+    .tour-badge {
+      position: absolute; top: 1rem; left: 1rem;
+    }
+    .tour-body { padding: 1.8rem 2rem; display: flex; flex-direction: column; }
+    .tour-body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .tour-body p.desc { font-size: 0.88rem; margin-bottom: 1rem; flex-grow: 1; }
+    .tour-facts {
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      font-size: 0.78rem; color: var(--mid);
+      margin-bottom: 1.2rem;
+    }
+    .tour-facts span { display: flex; align-items: center; gap: 0.3rem; }
+    .tour-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.8rem;
+    }
+    .tour-price-tag { font-size: 0.78rem; color: var(--mid); }
+    .tour-price-tag strong { color: var(--sea); font-size: 1.15rem; }
+
+    @media (max-width: 700px) {
+      .tour-card { grid-template-columns: 1fr; }
+      .tour-img { min-height: 140px; }
+    }
+
+    /* CATEGORY FILTER */
+    .filter-bar {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--light);
+      border-radius: 20px;
+      background: var(--white);
+      font-size: 0.78rem; font-weight: 500;
+      cursor: pointer; color: var(--mid);
+      font-family: var(--font-sans);
+    }
+    .filter-btn.active { background: var(--sea); border-color: var(--sea); color: var(--white); }
+
+    /* COMPARISON STRIP */
+    .compare-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light);
+      border: 1px solid var(--light);
+      margin-top: 1rem;
+    }
+    .compare-item {
+      background: var(--white);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .compare-item h4 { color: var(--sea); font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .compare-item p { font-size: 0.8rem; }
+
+    @media (max-width: 700px) {
+      .compare-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════ -->
+<nav>
+  <a href="index.html" class="nav-logo">Trogir <span>Insider</span></a>
+  <ul>
+    <li><a href="sehenswuerdigkeiten.html">Sehenswürdigkeiten</a></li>
+    <li><a href="restaurants.html">Restaurants</a></li>
+    <li><a href="hotels.html">Hotels</a></li>
+    <li><a href="straende.html">Strände</a></li>
+    <li><a href="ausfluege.html" class="active">Ausflüge</a></li>
+    <li><a href="infos.html">Infos</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li>
+      <div class="lang-switch">
+        <a href="ausfluege.html" class="active">DE</a>
+        <a href="en/excursions.html">EN</a>
+        <a href="nl/excursies.html">NL</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero page-hero">
+  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1530841344095-c8eb47fb2c25?w=1600&q=80');"></div>
+  <div class="breadcrumb">
+    <a href="index.html">Startseite</a>
+    <span>›</span>
+    Ausflüge
+  </div>
+  <div class="hero-tag">Nationalparks · Inseln · Tagestouren</div>
+  <h1>Von Trogir aus<br><em>die Region entdecken</em></h1>
+  <p class="hero-sub">Trogir liegt zentral an der dalmatinischen Küste – Wasserfälle, türkisblaue Buchten und UNESCO-Welterbe sind alle in wenigen Stunden erreichbar. Hier buchst du direkt und sicher.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     WARUM ONLINE BUCHEN
+════════════════════════════════════════ -->
+<section style="padding-bottom: 1rem;">
+  <div class="container">
+    <div class="compare-strip">
+      <div class="compare-item">
+        <h4>✓ Sofortige Bestätigung</h4>
+        <p>Kein Anstehen am Hafen – Ticket direkt aufs Handy.</p>
+      </div>
+      <div class="compare-item">
+        <h4>✓ Kostenlose Stornierung</h4>
+        <p>Bei den meisten Touren bis 24h vorher kostenfrei stornierbar.</p>
+      </div>
+      <div class="compare-item">
+        <h4>✓ Geprüfte Anbieter</h4>
+        <p>Nur Veranstalter mit guten Bewertungen und Lizenz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ALLE TOUREN
+════════════════════════════════════════ -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Touren & Ausflüge</span>
+      <h2>Die besten <em>Tagesausflüge</em></h2>
+      <p>Von Wasserabenteuern bis Kultur – nach Dauer und Thema sortiert.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">Alle</button>
+      <button class="filter-btn">Wasser & Inseln</button>
+      <button class="filter-btn">Natur & Wasserfälle</button>
+      <button class="filter-btn">Kultur & Städte</button>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:1.5rem;">
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#1B6F72,#0D4045)">
+          <span class="badge tour-badge" style="background:var(--stone); color:var(--dark);">Bestseller</span>
+          🌊
+        </div>
+        <div class="tour-body">
+          <h3>Krka Wasserfälle – Nationalpark Tour</h3>
+          <p class="desc">Schwimmen direkt unter den türkisfarbenen Wasserfällen, umgeben von dichtem Wald. Inklusive Transfer ab Trogir und Eintritt in den Nationalpark.</p>
+          <div class="tour-facts">
+            <span>⏱ Ganztags (ca. 8 Std.)</span>
+            <span>🚌 Transfer inklusive</span>
+            <span>👥 Kleingruppe</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>45 €</strong> p.P.</span>
+            <a href="https://www.getyourguide.de/trogir-l97622/" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#1B4F72,#0D2E45)">⛵</div>
+        <div class="tour-body">
+          <h3>Hvar & Blaue Grotte (Biševo) – Bootstour</h3>
+          <p class="desc">Die glamouröseste Insel Kroatiens und das leuchtend blaue Wasser der Grotte auf Biševo – ein Tag, der jedes Foto-Album füllt.</p>
+          <div class="tour-facts">
+            <span>⏱ Ganztags (ca. 10 Std.)</span>
+            <span>🚤 Speedboot</span>
+            <span>🥪 Snack inklusive</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>65 €</strong> p.P.</span>
+            <a href="https://www.getyourguide.de/trogir-l97622/" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#2E6B4F,#1A4A32)">
+          <span class="badge tour-badge" style="background:var(--stone); color:var(--dark);">UNESCO</span>
+          🌿
+        </div>
+        <div class="tour-body">
+          <h3>Plitvicer Seen – Tagesausflug</h3>
+          <p class="desc">UNESCO-Weltnaturerbe mit kaskadenartigen Seen und Wasserfällen im Karstwald. Etwas weiter entfernt, aber jede Minute Fahrt wert.</p>
+          <div class="tour-facts">
+            <span>⏱ Ganztags (ca. 12 Std.)</span>
+            <span>🚌 Klimatisierter Bus</span>
+            <span>🎫 Eintritt inklusive</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>70 €</strong> p.P.</span>
+            <a href="https://www.getyourguide.de/trogir-l97622/" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#6B4A1B,#4A3210)">🏛️</div>
+        <div class="tour-body">
+          <h3>Split Stadtführung – Diokletianspalast</h3>
+          <p class="desc">Nur 20 Minuten entfernt: Römische Geschichte, lebhafte Gassen und der berühmte Fischmarkt. Ideal als Halbtagesausflug.</p>
+          <div class="tour-facts">
+            <span>⏱ Halbtags (ca. 4 Std.)</span>
+            <span>🚶 Geführter Rundgang</span>
+            <span>🗣️ Deutschsprachiger Guide</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>25 €</strong> p.P.</span>
+            <a href="https://www.getyourguide.de/split-l554/" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#5D6D7E,#34495E)">🏝️</div>
+        <div class="tour-body">
+          <h3>5-Inseln-Tour: Blaue Lagune & Šolta</h3>
+          <p class="desc">Schwimmen in der Blauen Lagune, Schnorcheln vor Šolta und Mittagessen in einer versteckten Bucht – die perfekte Bootstour für Naturfans.</p>
+          <div class="tour-facts">
+            <span>⏱ Ganztags (ca. 9 Std.)</span>
+            <span>🚤 Katamaran</span>
+            <span>🍽️ Mittagessen inklusive</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>58 €</strong> p.P.</span>
+            <a href="https://www.viator.com/Trogir/d29845-ttd" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour-card">
+        <div class="tour-img" style="background: linear-gradient(135deg,#7D3C98,#4A235A)">🍷</div>
+        <div class="tour-body">
+          <h3>Weintour Dalmatien – Pelješac & Pošip</h3>
+          <p class="desc">Verkostung lokaler Weine wie Plavac Mali, dazu typisch dalmatinische Häppchen – eine entschleunigte Tour für Genießer.</p>
+          <div class="tour-facts">
+            <span>⏱ Halbtags (ca. 5 Std.)</span>
+            <span>🍷 3–4 Weinproben</span>
+            <span>🚗 Kleingruppe</span>
+          </div>
+          <div class="tour-bottom">
+            <span class="tour-price-tag">ab <strong>49 €</strong> p.P.</span>
+            <a href="https://www.getyourguide.de/trogir-l97622/" target="_blank" rel="sponsored" class="btn-sea">Jetzt buchen →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p class="affiliate-note" style="text-align:center; margin-top:1.5rem;">* Alle Links sind Partnerlinks zu GetYourGuide bzw. Viator – für dich kostenlos, wir erhalten bei einer Buchung eine kleine Provision.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     MIETWAGEN & TRANSFER
+════════════════════════════════════════ -->
+<section class="bg-sand">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+      <div>
+        <span class="section-tag">Auf eigene Faust</span>
+        <h2>Lieber <em>flexibel</em> unterwegs?</h2>
+        <div class="divider"></div>
+        <p>Für Čiovo, die Küstenstraße oder spontane Tagesausflüge lohnt sich ein Mietwagen – besonders außerhalb der Hauptsaison oft günstiger als gedacht.</p>
+        <br>
+        <a href="https://www.discovercars.com/de?affiliate=YOUR_AFFILIATE_ID&pickup=split-airport" target="_blank" rel="sponsored" class="btn-primary">Mietwagen vergleichen →</a>
+        <p class="affiliate-note" style="margin-top:1rem;">* Partnerlink zu Discover Cars – kostenloser Preisvergleich mehrerer Anbieter, für dich kostenlos.</p>
+      </div>
+      <div class="ticket-box" style="background:var(--white);">
+        <h3 style="color:var(--sea); font-family:var(--font-sans); font-weight:600; margin-bottom:1rem;">🚗 Transfer Flughafen Split → Trogir</h3>
+        <div class="ticket-row" style="display:flex; justify-content:space-between; padding:0.7rem 0; border-bottom:1px solid var(--light); font-size:0.88rem;">
+          <span>Privater Transfer (bis 4 Personen)</span>
+          <span class="ticket-price" style="font-weight:700; color:var(--sea);">ab 35 €</span>
+        </div>
+        <div class="ticket-row" style="display:flex; justify-content:space-between; padding:0.7rem 0; border-bottom:1px solid var(--light); font-size:0.88rem;">
+          <span>Shared Shuttle</span>
+          <span class="ticket-price" style="font-weight:700; color:var(--sea);">ab 12 €</span>
+        </div>
+        <div class="ticket-row" style="display:flex; justify-content:space-between; padding:0.7rem 0; font-size:0.88rem;">
+          <span>Fahrzeit</span>
+          <span style="color:var(--mid);">ca. 5–10 Minuten</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     NEWSLETTER
+════════════════════════════════════════ -->
+<section class="newsletter">
+  <span class="section-tag">Newsletter</span>
+  <h2>Kein Tipp soll <em>dir entgehen</em></h2>
+  <p>Einmal im Monat: neue Touren, saisonale Highlights und Frühbucherrabatte für Ausflüge.</p>
+  <div class="nl-form">
+    <input type="email" placeholder="deine@email.de">
+    <button type="button">Anmelden</button>
+  </div>
+  <p class="nl-note">Jederzeit abmeldbar. Kein Spam, versprochen.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <a href="index.html" class="footer-logo">Trogir <span>Insider</span></a>
+  <div class="footer-links">
+    <a href="sehenswuerdigkeiten.html">Sehenswürdigkeiten</a>
+    <a href="restaurants.html">Restaurants</a>
+    <a href="ausfluege.html">Ausflüge</a>
+    <a href="blog.html">Blog</a>
+    <a href="infos.html">Kontakt</a>
+  </div>
+  <div>
+    <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><br>
+    <span style="margin-top:0.4rem;display:block;">© 2026 Trogir Insider. Alle Rechte vorbehalten.</span>
+  </div>
+</footer>
+
+</body>
+</html>
