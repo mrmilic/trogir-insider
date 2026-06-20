@@ -73,8 +73,9 @@ a { color: inherit; text-decoration: none; }
 .hero-bg { position: absolute; inset: 0; z-index: -2; background-size: cover; background-position: center; }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(17,49,63,0.45) 0%, rgba(17,49,63,0.12) 35%, rgba(17,49,63,0.58) 100%);
+  background: linear-gradient(180deg, rgba(17,49,63,0.55) 0%, rgba(17,49,63,0.25) 38%, rgba(17,49,63,0.72) 100%);
 }
+.hero h1, .hero .hero-sub, .hero .eyebrow { text-shadow: 0 2px 16px rgba(17,49,63,0.5); }
 .hero-inner { max-width: var(--wrap); margin: 0 auto; width: 100%; }
 .hero .eyebrow { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; display: block; }
 .hero h1 {
@@ -267,6 +268,10 @@ footer { padding: clamp(3rem, 6vw, 5rem) 0 2.5rem; }
   .index-row { grid-template-columns: 2.5rem 1fr auto; gap: 1rem; }
   .foot-news-form { width: 100%; }
   .foot-news-form input { flex: 1; min-width: 0; }
+}
+@media (max-width: 600px) {
+  .foot-top, .foot-bottom { flex-direction: column; align-items: center; text-align: center; }
+  .foot-nav, .foot-legal { justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) {
   .fade { animation: none; opacity: 1; transform: none; }
