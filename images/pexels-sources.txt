@@ -1,0 +1,11 @@
+# Pexels photos - free, no attribution required.
+# (Crediting the photographer is appreciated but optional.)
+
+trogir-beach-aerial.jpg : DeLuca G - https://www.pexels.com/photo/rocky-sea-shore-with-bay-17491229/
+trogir-harbour.jpg : Diego F. Parra - https://www.pexels.com/photo/marina-in-town-with-fortification-on-shore-15553021/
+krka-waterfalls.jpg : Vladimir Srajber - https://www.pexels.com/photo/beautiful-krka-national-park-waterfalls-in-croatia-33473073/
+blue-lagoon.jpg : Lukas Blazek - https://www.pexels.com/photo/cruiser-ships-sailing-574021/
+wine-and-food.jpg : Team Picsfast - https://www.pexels.com/photo/a-person-holding-a-glass-of-red-wine-8753680/
+hotel-concordia.jpg : Max Vakhtbovych - https://www.pexels.com/photo/a-gray-and-white-themed-hotel-bedroom-7746092/
+hotel-vranjica-apartments.jpg : Adrien Olichon - https://www.pexels.com/photo/charming-urban-street-with-a-view-of-the-sea-32138455/
+boat-tour.jpg : Jo Kassis - https://www.pexels.com/photo/people-riding-boat-on-the-sea-5339517/
