@@ -1,0 +1,9 @@
+# robots.txt — Trogir Insider
+# Allow all crawlers full access to public pages.
+User-agent: *
+Allow: /
+
+# Imprint and Privacy carry a meta noindex tag, so they are intentionally
+# left crawlable here (a Disallow would stop crawlers from reading the noindex).
+
+Sitemap: https://trogir-insider.com/sitemap.xml
