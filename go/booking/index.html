@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Redirecting to Booking.com…</title>
+
+  <!-- Central affiliate config = the only place the ID lives -->
+  <script src="../../js/affiliate-config.js"></script>
+  <script>
+    (function () {
+      var cfg = window.AFFILIATE || {};
+      var aid = cfg.BOOKING_AFFILIATE_ID || "";
+
+      // Forward any params the button passed (ss, checkin, dest_id, …)
+      var params = new URLSearchParams(location.search);
+      if (!params.has("ss")) params.set("ss", "Trogir");
+      if (aid) { params.set("aid", aid); } else { params.delete("aid"); }
+
+      location.replace("https://www.booking.com/searchresults.html?" + params.toString());
+    })();
+  </script>
+
+  <!-- No-JS fallback (cannot carry the aid, but keeps the link usable) -->
+  <meta http-equiv="refresh" content="2;url=https://www.booking.com/searchresults.html?ss=Trogir">
+</head>
+<body>
+  <p style="font-family:sans-serif">Redirecting to Booking.com…
+    <a href="https://www.booking.com/searchresults.html?ss=Trogir">Continue&nbsp;→</a>
+  </p>
+</body>
+</html>
