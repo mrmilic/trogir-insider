@@ -83,6 +83,25 @@
       });
     });
   });
+
+  // On-site funnel tracking — internal CTAs + contact (consent-gated).
+  // Delegated so it also covers anything added later; affiliate links are
+  // skipped here because they already fire affiliate_click above.
+  document.addEventListener('click', function (e) {
+    if (!window.__tiConsent) return;              // consent gate
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || a.matches('[rel~="sponsored"]')) return;
+    var href = a.getAttribute('href') || '';
+    if (/^mailto:/i.test(href)) {
+      gtag('event', 'contact_click', { method: 'email', page_path: location.pathname });
+    } else if (a.matches('.link-arrow, .index-row, .tcard-link')) {
+      gtag('event', 'cta_click', {
+        cta_text:  (a.textContent || '').trim().slice(0, 80),
+        link_url:  href,
+        page_path: location.pathname
+      });
+    }
+  }, true);
 })();
 
 /* ---------- Cookie banner + navigation ---------- */
