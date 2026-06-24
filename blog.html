@@ -19,6 +19,28 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#11313F">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://trogir-insider.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://trogir-insider.com/blog.html" }
+        ]
+      },
+      {
+        "@type": "Blog",
+        "name": "Trogir Insider Blog",
+        "url": "https://trogir-insider.com/blog.html",
+        "description": "Practical guides and itineraries for visiting Trogir and the Dalmatian coast.",
+        "publisher": { "@type": "Organization", "name": "Trogir Insider", "url": "https://trogir-insider.com/" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -153,6 +175,7 @@
         <a href="infos.html">Contact</a>
       </nav>
     </div>
+    <p class="foot-eeat" style="font-size:0.78rem; color:#9a9a92; line-height:1.6; max-width:64ch; margin-bottom:1.6rem;">Trogir Insider is an <strong style="font-weight:600; color:#9a9a92;">independent</strong> travel guide — honest recommendations, no paid placements, researched and kept up to date by Ante Milic. Spotted something out of date? <a href="infos.html" style="color:#9a9a92; border-bottom:1px solid var(--line);">Let us know</a>.</p>
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 Trogir Insider. All rights reserved.</span>
       <div class="foot-legal">
