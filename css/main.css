@@ -11,7 +11,7 @@
   --paper:     #FBFAF8;
   --line:      #E4E2DA;
   --stone:     #B0934E;
-  --text:      #55615F;
+  --text:      #4A534F;
 
   --serif: 'Fraunces', Georgia, serif;
   --sans:  'Inter', system-ui, -apple-system, sans-serif;
@@ -36,8 +36,8 @@ a { color: inherit; text-decoration: none; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
 
 .eyebrow {
-  font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase;
-  font-weight: 500; color: var(--stone);
+  font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  font-weight: 600; color: var(--stone);
 }
 
 /* ---------- NAV ---------- */
@@ -79,9 +79,9 @@ a { color: inherit; text-decoration: none; }
 .hero-inner { max-width: var(--wrap); margin: 0 auto; width: 100%; }
 .hero .eyebrow { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; display: block; }
 .hero h1 {
-  font-family: var(--serif); font-weight: 300;
+  font-family: var(--serif); font-weight: 480;
   font-size: clamp(2.4rem, 6vw, 5.2rem); line-height: 1.04;
-  letter-spacing: -0.02em; max-width: 18ch; margin-bottom: 1.5rem;
+  letter-spacing: -0.005em; max-width: 18ch; margin-bottom: 1.5rem;
 }
 .hero h1 em { font-style: italic; color: #fff; }
 .hero-sub { font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 300; line-height: 1.7; max-width: 54ch; color: rgba(255,255,255,0.92); margin-bottom: 2.5rem; }
@@ -109,9 +109,9 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .sec-head { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .sec-head .eyebrow { display: block; margin-bottom: 1rem; }
 .sec-head h2 {
-  font-family: var(--serif); font-weight: 300;
+  font-family: var(--serif); font-weight: 480;
   font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.1;
-  letter-spacing: -0.02em; color: var(--ink); max-width: 20ch;
+  letter-spacing: -0.005em; color: var(--ink); max-width: 20ch;
 }
 .sec-head p { margin-top: 1rem; max-width: 56ch; color: var(--text); font-size: 0.98rem; }
 .bg-mist { background: var(--mist); }
@@ -143,7 +143,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* ---------- TRIP / CARD GRID (home + excursions teaser) ---------- */
 .card-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .tcard { background: var(--paper); display: flex; flex-direction: column; transition: transform 0.3s cubic-bezier(.2,.7,.2,1); border: 1px solid var(--line); }
-.tcard:hover { transform: translateY(-5px); }
+.tcard:hover { transform: translateY(-2px); }
 .tcard-img { aspect-ratio: 3/2; background-size: cover; background-position: center; }
 .tcard-body { padding: 1.4rem 1.4rem 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
 .tcard-body h3 { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; color: var(--ink); margin-bottom: 0.5rem; }
@@ -176,14 +176,14 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 
 /* ---------- HOTEL ROWS (hotels) ---------- */
 .hrow { display: grid; grid-template-columns: 240px 1fr; border: 1px solid var(--line); background: var(--paper); transition: box-shadow 0.25s, transform 0.25s; }
-.hrow:hover { box-shadow: 0 16px 40px rgba(17,49,63,0.10); transform: translateY(-3px); }
+.hrow:hover { box-shadow: 0 8px 20px rgba(17,49,63,0.07); transform: translateY(-1px); }
 .hrow-img { background-size: cover; background-position: center; min-height: 200px; }
 .hrow-body { padding: 1.8rem 2rem; display: flex; flex-direction: column; }
 .hrow-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.3rem; }
 .hrow-stars { color: var(--stone); font-size: 0.8rem; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
 .hrow-body h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; color: var(--ink); }
 .hrow-loc { font-size: 0.78rem; color: var(--text); margin-bottom: 0.9rem; }
-.hrow-rating { background: var(--sea); color: #fff; font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.6rem; white-space: nowrap; }
+.hrow-rating { background: var(--ink); color: #fff; font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.6rem; white-space: nowrap; }
 .hrow-desc { font-size: 0.86rem; color: var(--text); line-height: 1.65; flex-grow: 1; margin-bottom: 1.2rem; }
 .hrow-foot { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid var(--line); }
 .hrow-price { font-size: 0.8rem; color: var(--text); }
@@ -215,7 +215,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .cta { background: var(--ink); color: #fff; }
 .cta-inner { max-width: 760px; }
 .cta .eyebrow { color: var(--stone); display: block; margin-bottom: 1.2rem; }
-.cta h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.9rem, 3.8vw, 3rem); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.1rem; }
+.cta h2 { font-family: var(--serif); font-weight: 480; font-size: clamp(1.9rem, 3.8vw, 3rem); letter-spacing: -0.005em; line-height: 1.1; margin-bottom: 1.1rem; }
 .cta p { color: rgba(255,255,255,0.72); font-weight: 300; font-size: 1.05rem; line-height: 1.7; max-width: 52ch; margin-bottom: 2.4rem; }
 .cta-actions { display: flex; gap: 2.5rem; flex-wrap: wrap; }
 .cta .link-arrow { color: #fff; border-color: rgba(255,255,255,0.4); }
@@ -302,4 +302,33 @@ footer { padding: clamp(3rem, 6vw, 5rem) 0 2.5rem; }
   .cc-banner { flex-direction: column; align-items: flex-start; }
   .cc-actions { width: 100%; }
   .cc-btn { flex: 1; }
+}
+
+/* ---------- IN-TEXT LINKS (content paragraphs only) ---------- */
+/* Make inline links inside body copy visible — an insider guide is link-rich.
+   Scoped to light-section prose; nav, cards' own link-arrows, buttons,
+   breadcrumbs and dark sections are untouched. */
+.sec-head p a,
+.hl-item p a,
+.tip p a,
+.info-cell p a,
+.area-card p a,
+.hrow-desc a,
+.cmp td a {
+  color: var(--sea);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(58,124,165,0.35);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s, color 0.2s;
+}
+.sec-head p a:hover,
+.hl-item p a:hover,
+.tip p a:hover,
+.info-cell p a:hover,
+.area-card p a:hover,
+.hrow-desc a:hover,
+.cmp td a:hover {
+  text-decoration-color: var(--sea);
+  color: var(--ink);
 }
