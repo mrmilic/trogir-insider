@@ -389,3 +389,22 @@ figure.ti-figure.portrait { max-width: 420px; }
 .next-step:hover .ns-title { color: var(--sea); }
 .ns-desc { font-size: 0.8rem; color: #9a8f78; text-align: right; max-width: 24ch; line-height: 1.5; flex-shrink: 0; }
 @media (max-width: 600px) { .ns-desc { display: none; } }
+
+/* ---------- LOCAL TIP beside a photo (flagship guides) ---------- */
+.photo-tip { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(1.2rem, 2.5vw, 2.2rem); align-items: center; max-width: 1000px; margin: clamp(2.2rem, 4vw, 3.2rem) auto 0; }
+.photo-tip .ti-figure { max-width: none; margin: 0; }
+.local-tip { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--stone); padding: 1.3rem 1.45rem; }
+.lt-label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); font-weight: 600; margin-bottom: 0.6rem; }
+.lt-label::before { content: "📍"; font-size: 0.85rem; }
+.local-tip p { font-size: 0.9rem; line-height: 1.62; color: var(--text); }
+.local-tip p + p { margin-top: 0.7rem; }
+.local-tip strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 760px) { .photo-tip { grid-template-columns: 1fr; gap: 1.1rem; } }
+
+/* ---------- FIELD NOTES (first-hand observations on flagship guides) ---------- */
+.field-notes { background: var(--mist); border: 1px solid var(--line); border-left: 3px solid var(--stone); padding: 1.4rem 1.6rem; max-width: 680px; }
+.field-notes .eyebrow { display: block; margin-bottom: 0.2rem; }
+.field-notes ul { list-style: none; }
+.field-notes li { font-size: 0.88rem; line-height: 1.62; color: var(--text); padding: 0.6rem 0; border-top: 1px solid var(--line); }
+.field-notes li:first-child { border-top: 0; padding-top: 0.4rem; }
+.field-notes li strong { color: var(--ink); font-weight: 600; }
