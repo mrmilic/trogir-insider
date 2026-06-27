@@ -1,0 +1,7 @@
+# Local originals (multi-GB source photos/videos) — never deploy or commit.
+# Also excluded from the live site via .vercelignore.
+assets/
+
+# Editing leftovers / backups
+*.orig
+**/_frames/
