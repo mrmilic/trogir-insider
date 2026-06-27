@@ -379,3 +379,4 @@ figure.ti-figure { margin: 0 auto; max-width: 820px; }
 /* Own video (poster + click-to-play, muted loop, no bytes until play) */
 .ti-photo video { width: 100%; height: auto; display: block; background: var(--ink); }
 .photo-credit.top { top: 12px; bottom: auto; }
+figure.ti-figure.portrait { max-width: 420px; }
