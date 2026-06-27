@@ -375,3 +375,7 @@ figure.ti-figure { margin: 0 auto; max-width: 820px; }
 .author-card-feature { gap: 1.6rem; align-items: flex-start; }
 .author-card-feature img { width: 320px; height: auto; border-radius: 0; border: 1px solid var(--line); box-shadow: none; align-self: flex-start; }
 @media (max-width: 600px) { .author-card-feature img { width: 100%; } }
+
+/* Own video (poster + click-to-play, muted loop, no bytes until play) */
+.ti-photo video { width: 100%; height: auto; display: block; background: var(--ink); }
+.photo-credit.top { top: 12px; bottom: auto; }
