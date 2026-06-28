@@ -241,6 +241,7 @@ footer { padding: clamp(3rem, 6vw, 5rem) 0 2.5rem; }
 .foot-nav a { font-size: 0.85rem; color: var(--text); transition: color 0.2s; }
 .foot-nav a:hover { color: var(--ink); }
 .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; padding-top: 1.8rem; }
+.foot-eeat { margin-top: 1.5rem; }
 .foot-legal { display: flex; gap: 1.2rem; }
 .foot-legal a, .foot-copy { font-size: 0.76rem; color: #9a9a92; }
 .foot-legal a:hover { color: var(--text); }
