@@ -309,6 +309,17 @@ footer { padding: clamp(3rem, 6vw, 5rem) 0 2.5rem; }
   .cc-btn { flex: 1; }
 }
 
+/* ---------- COMPARISON TABLE (.cmp) ---------- */
+.cmp-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.cmp { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 0.72rem 0.95rem; border-bottom: 1px solid var(--line); line-height: 1.45; }
+.cmp thead th { font-family: var(--sans); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--stone); white-space: nowrap; }
+.cmp tbody th { font-weight: 600; color: var(--ink); white-space: nowrap; }
+.cmp td { color: var(--text); }
+.cmp td:first-of-type { white-space: nowrap; }
+.cmp tbody tr:last-child th, .cmp tbody tr:last-child td { border-bottom: 0; }
+.cmp-wrap .cmp { min-width: 600px; }
+
 /* ---------- IN-TEXT LINKS (content paragraphs only) ---------- */
 /* Make inline links inside body copy visible — an insider guide is link-rich.
    Scoped to light-section prose; nav, cards' own link-arrows, buttons,
